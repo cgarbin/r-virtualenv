@@ -47,6 +47,14 @@ Verify that the machine is up and running:
 
 > > Explain some basic Vagrant commands
 
+- `vagrant up`
+- `vagrant halt`
+- `vagrant destroy`
+- `vagrant box list`
+- `vagrant box remove <box>`
+
+> > Explain the default synced folder `/vagrant`
+
 ## What is in the `Vagrantfile`
 
 > > Explain what is inside the Vagrantfile
