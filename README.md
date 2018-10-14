@@ -8,7 +8,7 @@ This environments uses:
 - [VirtualBox](https://www.virtualbox.org/) as the host for the virtual machine
 - [Ansible](https://www.ansible.com/) to configure the virtual machine
 
-Note: tested on a MacBook. Not tested on a Windows or other environments.
+Note: tested on a MacBook. Not tested on Windows or other environments.
 
 # Installing Vagrant and VirtualBox
 
