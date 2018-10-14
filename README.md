@@ -6,9 +6,9 @@ This environments uses:
 
 - [Vagrant](https://www.vagrantup.com/) to create a Linux virtual machines
 - [VirtualBox](https://www.virtualbox.org/) as the host for the virtual machine
-- [Ansible](https://www.ansible.com/) for configuration
+- [Ansible](https://www.ansible.com/) to configure the virtual machine
 
-Note: tested on a MacBook. Not tested on a Windows machines at this points.
+Note: tested on a MacBook. Not tested on a Windows or other environments.
 
 # Installing Vagrant and VirtualBox
 
@@ -21,7 +21,7 @@ Install Vagrant following the instructions [here](https://www.vagrantup.com/docs
 
 # Getting the virtual machine started
 
-- Clone this repository if you haven't done so yet: `git clone https://<link here>`
+- Clone this repository if you haven't done so yet: `git clone https://https://github.com/cgarbin/r-virtualenv`
 - `cd` to the repository's directory
 - Start the virtual machine with Vagrant: `vagrant up`
 
@@ -31,7 +31,9 @@ The virtual machine we are creating is based on the [Ubuntu Bento box](https://a
 
 Verify that the machine is up and running:
 
-- `vagrant ssh
+- `vagrant ssh`
+- This should take you to the command line for that machine
+- Type `exit` to exit (the machine will stay running)
 
 # Some technical notes
 
