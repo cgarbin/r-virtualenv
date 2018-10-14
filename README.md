@@ -31,9 +31,9 @@ The virtual machine we are creating is based on the [Ubuntu Bento box](https://a
 
 Verify that the machine is up and running:
 
-- `vagrant ssh`
-- This should take you to the command line for that machine
-- Type `exit` to exit (the machine will stay running)
+- Log into the virtual machine: `vagrant ssh`
+- Check if Ansible is installed: `ansible --version`
+- Exit the virtual machine (will stay running)): `exit`
 
 # Some technical notes
 
@@ -48,6 +48,7 @@ Verify that the machine is up and running:
 > > Explain some basic Vagrant commands
 
 - `vagrant up`
+- `vagrant suspend`
 - `vagrant halt`
 - `vagrant destroy`
 - `vagrant box list`
