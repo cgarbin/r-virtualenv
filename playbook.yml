@@ -1,6 +1,29 @@
-- name: Hello World!
-  hosts: all
+- hosts: all
+  become: yes
 
   tasks:
-    - name: Hello World!
-      shell: echo "Hello"
+    # Install Keras using instructions from Deep Learning with R, appendix A
+    - name: Update repositories cache
+      apt:
+        update_cache: yes
+
+    - name: Install python-pip
+      apt:
+        name: python-pip
+
+    - name: Install python-dev
+      apt:
+        name: python-dev
+
+    - name: Install OpenBLAS to run fast tensor operations on CPUs
+      apt:
+        name: "{{ blaspackages }}"
+      vars:
+        blaspackages:
+          - build-essential
+          - cmake
+          - git
+          - unzip
+          - pkg-config
+          - libopenblas-dev
+          - liblapack-dev
