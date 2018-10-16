@@ -2,11 +2,14 @@ A reproducible R environment
 
 How to create an R environment in a consistent way, to create reproducible experiments.
 
+To create a consistent environment we pick specific versions of the operating system and the tools we use. Picking the latest available version, common in many install procedures, would change the behavior of the environment from time to time.
+
 This environments uses:
 
 - [Vagrant](https://www.vagrantup.com/) to create a Linux virtual machines
 - [VirtualBox](https://www.virtualbox.org/) as the host for the virtual machine
 - [Ansible](https://www.ansible.com/) to configure the virtual machine
+- [R Studio Server](https://www.rstudio.com/products/rstudio/#Server) to access the R environment from your computer
 
 Note: tested on a MacBook. Not tested on Windows or other environments.
 
@@ -25,7 +28,7 @@ Install Vagrant following the instructions [here](https://www.vagrantup.com/docs
 - `cd` to the repository's directory
 - Start the virtual machine with Vagrant: `vagrant up`
 
-This will start a virtual machine defined in `Vagrantfile`. The first time you run this command it will take a while. It has to download the image for that machine first. Vagrant caches the image locally. It will start up much faster after the initial download.
+This will start a virtual machine defined in `Vagrantfile`. The first time you run this command it will take a while. It has to download the image for that machine and configure it. It will start up much faster after the initial download. Vagrant caches the image locally.
 
 The virtual machine we are creating is based on the [Ubuntu Bento box](https://app.vagrantup.com/bento/). It's one of the [officially supported Vagrant images](https://www.vagrantup.com/docs/boxes.html#official-boxes).
 
@@ -35,12 +38,16 @@ Verify that the machine is up and running:
 - Check if Ansible is installed: `ansible --version`
 - Exit the virtual machine (will stay running)): `exit`
 
+# Running R Studio Server
+
+# Accessing files on your computer
+
 # Some technical notes
 
 ## Why Ubuntu
 
 - Popular in the Linux community
-- Tensorflow GPU [official Python builds](https://www.tensorflow.org/install/pip) are avaialble only for Windows and Ubuntu
+- Tensorflow [GPU official Python builds](https://www.tensorflow.org/install/pip) are avaialble only for Windows and Ubuntu
 - Tensorflow [build-from-code instructions](https://www.tensorflow.org/install/source) are available only for MacOS and Ubuntu
 
 ## A quick Vagrant tour
