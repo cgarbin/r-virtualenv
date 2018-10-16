@@ -1,29 +1,23 @@
-- hosts: all
+# Based on "Deep Learning with R", appendix B (how to configure RStudio
+# Server on AWS)
+# Note
+- name: Install RStudio Server and Keras on Ubuntu
+  hosts: all
   become: yes
 
   tasks:
-    # Install Keras using instructions from Deep Learning with R, appendix A
-    - name: Update repositories cache
+    - name: Add apt key for r-base
+      apt_key:
+        id: E084DAB9
+        keyserver: keyserver.ubuntu.com
+        state: present
+
+    - name: Add RStudio CRAN repo to the list of providers for apt
+      apt_repository:
+        repo: deb http://cran.rstudio.com/bin/linux/ubuntu bionic-cran35/
+        state: present
+
+    - name: Install R base package
       apt:
+        name: r-base
         update_cache: yes
-
-    - name: Install python-pip
-      apt:
-        name: python-pip
-
-    - name: Install python-dev
-      apt:
-        name: python-dev
-
-    - name: Install OpenBLAS to run fast tensor operations on CPUs
-      apt:
-        name: "{{ blaspackages }}"
-      vars:
-        blaspackages:
-          - build-essential
-          - cmake
-          - git
-          - unzip
-          - pkg-config
-          - libopenblas-dev
-          - liblapack-dev
