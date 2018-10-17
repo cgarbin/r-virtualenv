@@ -10,6 +10,14 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "192.168.55.101"
   config.vm.network "forwarded_port", guest: 8787, host: 8787
 
+  # Allocate more memory and CPUs because it will run the R code
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "4096"
+    # We may or may not have this number of CPUs in the host machine
+    # Adjust as needed
+    vb.cpus = "4"
+  end
+
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook = "playbook.yml"
     # Note that this option will install the latest Ansible available for the
