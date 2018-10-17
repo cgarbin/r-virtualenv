@@ -15,7 +15,7 @@ The quick version to get started. Details in later sessions.
 
 - Install Vagrant: [instructions](https://www.vagrantup.com/docs/installation/)
 - Install VirtualBox: [instructions](https://www.virtualbox.org/wiki/Downloads)
-- Clone this repository: `git clone https://https://github.com/cgarbin/r-virtualenv`
+- Clone this repository: `git clone https://github.com/cgarbin/r-virtualenv`
 - Switch to the cloned repository: `cd r-virtualenv`
 - Start the virtual machine (first time will take a few minutes): `vagrant up`
 - Open R Studio on a browser: `http://192.168.55.101:8787/`
@@ -40,11 +40,11 @@ Install Vagrant following the instructions [here](https://www.vagrantup.com/docs
 
 ## Getting the virtual machine started
 
-- Clone this repository: `git clone https://https://github.com/cgarbin/r-virtualenv`
+- Clone this repository: `git clone https://github.com/cgarbin/r-virtualenv`
 - `cd r-virtualenv` to the repository's directory
 - Start the virtual machine with Vagrant: `vagrant up`
 
-This will start a virtual machine defined in `Vagrantfile`. The first time you run this command it will take a while. It has to download the image for that machine and configure it. It will start up much faster after the initial download. Vagrant caches the image locally.
+This will start a virtual machine defined in `Vagrantfile`. The first time you run this command it will take a while. It has to download the image for that machine and configure it. It will start up much faster after the initial download. Vagrant caches the box (the image template) locally and VirtualBox saves the machine we created from that box.
 
 The virtual machine we are creating is based on the [Ubuntu Bento box](https://app.vagrantup.com/bento/). It's one of the [officially supported Vagrant images](https://www.vagrantup.com/docs/boxes.html#official-boxes).
 
@@ -62,7 +62,7 @@ Open a browser to `http://192.168.55.101:8787/`. This address is defined in the 
 
 R Studio will display a login screen. Enter user name `vagrant` and password `vagrant`.
 
-# Installing Keras and Tensorflow
+## Installing Keras and Tensorflow
 
 We will install Keras and Tensorflow using the R Studio console (the window at the bottom left on the browser).
 
