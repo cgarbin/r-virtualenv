@@ -18,7 +18,6 @@
 
     - name: Install r-base package
       apt:
-        # TODO: install specific version to make the environment reproducible
         name: r-base
         update_cache: yes
 
@@ -29,4 +28,16 @@
     - name: Install rstudio-server
       apt:
         # Install specific version to make the environment reproducible
+        # (Somewhat reproducible, since we aren't specifying the R, Keras and
+        # Tensorflow versions we are installing)
         deb: https://download2.rstudio.org/rstudio-server-1.1.456-amd64.deb
+
+    # Install Keras dependencies
+    # They are needed when we run install_keras() inside R Studio
+    - name: Install Keras dependencies
+      apt:
+        name: "{{ kerasdeps }}"
+      vars:
+        kerasdeps:
+          - python-pip
+          - python-virtualenv
